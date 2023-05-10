@@ -20,7 +20,7 @@ jobs:
         run: go install github.com/packwiz/packwiz@latest
 
       - name: Update mods
-        run: go run github.com/packwiz/packwiz@latest update --all
+        run: go run github.com/packwiz/packwiz@latest update --all -y
       
       - name: Commit files and push it
         run: |
