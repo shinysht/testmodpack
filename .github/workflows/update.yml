@@ -22,15 +22,12 @@ jobs:
       - name: Update mods
         run: go run github.com/packwiz/packwiz@latest update --all -y
       
-      - name: Commit files
+      - name: Commit files and push it
         run: |
           git config --local user.name actions-user
-          git config --local user.email "actions@github.com"
+          git config --local user.email "spam2@posteo.de"
           if ! git diff --exit-code; then
             git add .
             git commit -m "update mods"
+            git push
           fi
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: ${{ github.ref }}
