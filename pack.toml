@@ -1,0 +1,12 @@
+name = "Testworkflow"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "fca10c20db8b340fd904ebe0612824ee91169b94ec7ce2e72d4d8766f592e20b"
+
+[versions]
+fabric = "0.14.19"
+minecraft = "1.19.4"
