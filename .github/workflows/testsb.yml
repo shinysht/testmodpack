@@ -1,0 +1,47 @@
+name: Release Pack
+
+on:
+#  push:
+#    branches:
+#    - master
+#  workflow_dispatch:
+  
+jobs:
+  export_pack:
+    name: Export Pack
+    runs-on: ubuntu-latest
+    steps:
+    
+      - uses: actions/checkout@v3
+
+      - name: set mc-version from pack.toml
+        id: setMCVERSION
+        run: |
+          MCVersion=$(cat pack.toml | grep -o -P '(?<=minecraft\ \=\ \")(.*)(?=\")')
+          echo "mc_version=$MCVersion" >> "$GITHUB_ENV"
+      
+      - name: Setup Go environment
+        uses: actions/setup-go@v4.0.0
+        
+      - name: Install Packwiz
+        run: go install github.com/packwiz/packwiz@latest
+      
+      - name: Export modpack
+        run: packwiz mr export
+
+      - name: Make changelog file
+        run: sed -n "/^# Release $(grep -m1 -oP '(?<=^# Release )[^\s]+' CHANGELOG.md)/,/^# Release/{/^# Release/d; p}" CHANGELOG.md >> latest-changelog.md
+    
+      - uses: Kir-Antipov/mc-publish@v3.2
+        with:
+          modrinth-id: KmiWHzQ4
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          changelog-file: latest-changelog.md
+          
+          github-token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+          
+          files-primary: Skyblocker Modpack-*.mrpack
+          loaders: |
+            fabric
+          game-versions: |
+            ${{ env.action_state }}

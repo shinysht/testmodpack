@@ -1,0 +1,20 @@
+name: trigger other workflow
+
+on:
+  push:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: set mc-version from pack.toml
+        id: step_one
+        run: |
+          MCVersion=$(cat pack.toml | grep -o -P '(?<=minecraft\ \=\ \")(.*)(?=\")')
+          echo "action_state=$MCVersion" >> "$GITHUB_ENV"
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}" 
