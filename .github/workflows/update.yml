@@ -17,10 +17,10 @@ jobs:
           go-version: '1.20'
 
       - name: Install packwiz
-        run: go install http://github.com/packwiz/packwiz@latest update
+        run: go install github.com/packwiz/packwiz@latest
 
       - name: Update mods
-        run: go run http://github.com/packwiz/packwiz@latest update
+        run: go run github.com/packwiz/packwiz@latest update --all
       
       - name: Commit files and push it
         run: |
