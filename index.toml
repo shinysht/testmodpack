@@ -5,6 +5,11 @@ file = ".github/workflows/update.yml"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
+file = "mods/2mal3s-recipes.pw.toml"
+hash = "1411adb6c82074abea563a6dfb7b1ab38ce625e09f76392b9b6c71b4e37eca9a"
+metafile = true
+
+[[files]]
 file = "mods/architectury-api.pw.toml"
 hash = "35376c39a7cb3dba90ba6263b0f5d94fe3cc5112650dd204d157ab4baf19152a"
 metafile = true
