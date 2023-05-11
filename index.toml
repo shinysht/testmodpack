@@ -18,8 +18,3 @@ metafile = true
 file = "mods/modmenu.pw.toml"
 hash = "b8637d34d5e142b7de5ff0ffdcefc664ec322ea0528a251bfbc3d99e1c8986e9"
 metafile = true
-
-[[files]]
-file = "mods/trinkets.pw.toml"
-hash = "168d832a826225e12f84d31bc10ddf3f7f21c75c4c25bdc975a3381dcb17fd15"
-metafile = true
