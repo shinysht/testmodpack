@@ -5,6 +5,21 @@ file = ".github/workflows/update.yml"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
+file = "mods/emi.pw.toml"
+hash = "69cc56416b06ffff1841f7ac748dde02e916c930f4a403f7d348016f196fe92f"
+metafile = true
+
+[[files]]
+file = "mods/fabric-api.pw.toml"
+hash = "6592715d9a03bbafbfa9c4688f5ee436df29239d9b7808f1f964724568ec0bb9"
+metafile = true
+
+[[files]]
 file = "mods/modmenu.pw.toml"
-hash = "bc1e8aaf8446fd66c289cc498e421aa878a93f853ab888091fc12c662642aae2"
+hash = "b8637d34d5e142b7de5ff0ffdcefc664ec322ea0528a251bfbc3d99e1c8986e9"
+metafile = true
+
+[[files]]
+file = "mods/trinkets.pw.toml"
+hash = "168d832a826225e12f84d31bc10ddf3f7f21c75c4c25bdc975a3381dcb17fd15"
 metafile = true
