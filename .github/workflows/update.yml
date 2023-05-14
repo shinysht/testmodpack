@@ -1,7 +1,7 @@
 name: update repo
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   build:
@@ -28,6 +28,7 @@ jobs:
           git config --local user.name actions-user
           git config --local user.email "spam2@posteo.de"
           if ! git diff --exit-code -- mods; then
+            echo "test1"
             git add .
             git diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods | grep -w "name" | python updateChangelog.py
             git commit -m "update mods"
