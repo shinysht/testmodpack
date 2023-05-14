@@ -23,6 +23,7 @@ jobs:
       
       - name: Commit files and push it
         run: |
+          git
           git diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods
           git config --local user.name actions-user
           git config --local user.email "spam2@posteo.de"
