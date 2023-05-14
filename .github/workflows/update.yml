@@ -2,6 +2,9 @@ name: update repo
 
 on:
   workflow_call:
+    secrets:
+      token:
+        required: true
 
 jobs:
   build:
@@ -10,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.token }}
 
       - name: Set up Go
         uses: actions/setup-go@v4
