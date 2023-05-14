@@ -3,11 +3,16 @@ on:
     branches:
     - master
   workflow_dispatch:
+    inputs:
+      token:
+        required: true
   
 jobs:
 
   update_modpack:
     uses: shinysht/testmodpack/.github/workflows/update.yml@main
+    with:
+      token: ${{ secrets.PAT_TOKEN }}
   
   test_echo:
     runs-on: ubuntu-latest
