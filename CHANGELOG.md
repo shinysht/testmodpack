@@ -2,7 +2,7 @@
 
 ## Changes
 ### Updated
- - Mod Menu
+ - Mod Menus
 ### Added
  - Architectury API
  - Cloth Config API
