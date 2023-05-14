@@ -28,9 +28,9 @@ jobs:
       
       - name: Commit files and push it
         run: |
+          git diff --exit-code $(git tag --sort version:refname | tail -n 1) -- mods
           git config --local user.name actions-user
           git config --local user.email "spam2@posteo.de"
-          git diff --exit-code $(git tag --sort version:refname | tail -n 1) -- mods
           if ! git diff --exit-code $(git tag --sort version:refname | tail -n 1) -- mods; then
             echo "test1"
             git add .
