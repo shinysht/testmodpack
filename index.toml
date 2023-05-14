@@ -1,8 +1,24 @@
 hash-format = "sha256"
 
 [[files]]
+file = ".github/workflows/releasebuild.yml"
+hash = "309c1013ee914fd98bad2b026fc783f58956a92c9bbfbfb0a11f0aece70c15f2"
+
+[[files]]
+file = ".github/workflows/test.yml"
+hash = "a45b47549f3a83735ec61e29eff0f496d634e6897a3285f1aa03ab73b69c1582"
+
+[[files]]
+file = ".github/workflows/testsb.yml"
+hash = "a814d46e023a6835bc4f468ae9d091d954bf3fbe699459a975f10dd1e697dcfe"
+
+[[files]]
 file = ".github/workflows/update.yml"
-hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+hash = "215744b4c4c732539ea5594008dd7a5b154e76cf95f628c6d4ad204c0304e74d"
+
+[[files]]
+file = "CHANGELOG.md"
+hash = "f5d424027006c0eb0e0fddf57650328b4d5267f6ac9785700886e25ddfef5ff2"
 
 [[files]]
 file = "mods/2mal3s-recipes.pw.toml"
@@ -43,3 +59,17 @@ metafile = true
 file = "mods/rei.pw.toml"
 hash = "1a288ba9c3f6a2fd9798b1db215b0c24a8d20e50bb8b006972d6e682197fee27"
 metafile = true
+
+[[files]]
+file = "mods/totemcounter.pw.toml"
+hash = "edc6d6262d4b90ec0073bf26270c2e63916fcb94185de239027335461eddabb9"
+metafile = true
+
+[[files]]
+file = "mods/ukulib.pw.toml"
+hash = "0c5ec8fdc3ba8674173805024176b8ef5f60a2a2e47a9df9b68ee72b604f78ab"
+metafile = true
+
+[[files]]
+file = "updateChangelog.py"
+hash = "28ee7bd424dcb6892052f191a57e980153a7f8fce3d5f84069c47eed53893746"
