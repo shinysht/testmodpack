@@ -7,7 +7,7 @@ on:
 jobs:
 
   update_modpack:
-    uses: shinysht/testmodpack/.github/workflows/update.yml@master
+    uses: shinysht/testmodpack/.github/workflows/update.yml@main
   
   test_echo:
     runs-on: ubuntu-latest
