@@ -1,4 +1,4 @@
-name: update repo
+name: update repo2
 
 on:
   workflow_dispatch:
