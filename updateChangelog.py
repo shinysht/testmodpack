@@ -26,6 +26,12 @@ for line in diff.split('\n'):
     elif modified_match:
         modified.append(modified_match.group(1))
 
+print("##########################################")
+print(added)
+print(removed)
+print(modified)
+print("##########################################")
+
 # Generate the desired output
 with open("CHANGELOG.md", "r+") as file:
     first_line = file.readline()
