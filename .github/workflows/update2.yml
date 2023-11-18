@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 2
 
       - name: Set up Go
         uses: actions/setup-go@v4
@@ -25,8 +26,6 @@ jobs:
       
       - name: Commit files and push it
         run: |
-          git config --local user.name actions-user
-          git config --local user.email "spam2@posteo.de"
           if ! git diff --exit-code $(git tag --sort version:refname | tail -n 1) -- mods; then
             git add .
             git diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods | grep -w "name" | python updateChangelog.py
