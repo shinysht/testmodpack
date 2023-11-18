@@ -9,35 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.PAT_TOKEN2 }}
-
-      - name: Set up Go
-        uses: actions/setup-go@v4
-
-      - name: Install packwiz
-        run: go install github.com/packwiz/packwiz@latest
-
-      - name: Update mods
-        run: go run github.com/packwiz/packwiz@latest update --all -y
       
-      - name: Commit files and push it
-        run: |
-          git tag --sort version:refname
-          git config --local user.name actions-user
-          git config --local user.email "spam2@posteo.de"
-          if ! git diff --exit-code; then
-            git add .
-            git diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods | grep -w "name" | python updateChangelog.py
-            VERSION=$(grep -oP '(?<=# Release )\d+\.\d+\.\d+' CHANGELOG.md | head -n 1)
-            sed -i "s/version = \".*\"/version = \"$VERSION\"/" pack.toml
-            git add .
-            git commit -m "update mods"
-            git push
-          fi
-          
-      - name: Make changelog file
-        run: sed -n "/^# Release $(grep -m1 -oP '(?<=^# Release )[^\s]+' CHANGELOG.md)/,/^# Release/{/^# Release/d; p}" CHANGELOG.md >> latest-changelog.md
-
       - name: cat latest-changelog.md
-        run: cat latest-changelog.md
+        run: |
+          CHANGELOG=$(cat CHANGELOG.md  | awk '/^# /{count++; if(count>1) exit;} count==1')
+          echo $CHANGELOG 
