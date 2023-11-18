@@ -15,9 +15,4 @@ jobs:
       - name: Commit files and push it
         run: |
           git fetch --prune --unshallow --tags
-          git --no-pager tag --sort version:refname
-          vara=$(git tag --sort version:refname | tail -n 1)
-          git --no-pager diff --unified=0 $vara -- mods >> temp
-          echo "####################"
-          ls temp
-          cat temp
+          git --no-pager diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods | grep -w "name" 
