@@ -27,22 +27,22 @@ metafile = true
 
 [[files]]
 file = "mods/architectury-api.pw.toml"
-hash = "35376c39a7cb3dba90ba6263b0f5d94fe3cc5112650dd204d157ab4baf19152a"
+hash = "56c08a19b9257a481269b77cd630c7396a4ce471f0a4f434df41a49a0623a95a"
 metafile = true
 
 [[files]]
 file = "mods/cloth-config.pw.toml"
-hash = "156942df991662545265aae10fafa4b64bc1ba1226670be03916e58894671089"
+hash = "45e56b31dbb99cdb63c43338979328093b7369813448fd6875d13c9f81aa2799"
 metafile = true
 
 [[files]]
 file = "mods/emi.pw.toml"
-hash = "69cc56416b06ffff1841f7ac748dde02e916c930f4a403f7d348016f196fe92f"
+hash = "5a0512edc2528b817ecd5a89255668b9de6e814afb420ad828d406af46a244c4"
 metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "1227ca7b34ec9172b7d86663f4d12591ae868404c9884bec29e6a17608675ae2"
+hash = "6ac4fa089721e53f99b2c6bf2deee7d5d256391a220403f8ef88c7ac42f46df7"
 metafile = true
 
 [[files]]
@@ -52,12 +52,12 @@ metafile = true
 
 [[files]]
 file = "mods/modmenu.pw.toml"
-hash = "bc1e8aaf8446fd66c289cc498e421aa878a93f853ab888091fc12c662642aae2"
+hash = "d18d104455a86bebd3f29deaf3458258674ea053d96e7b8fb5711cfea227fc20"
 metafile = true
 
 [[files]]
 file = "mods/rei.pw.toml"
-hash = "1a288ba9c3f6a2fd9798b1db215b0c24a8d20e50bb8b006972d6e682197fee27"
+hash = "8d160f1d74bb161def760447d27287ce06ecf89eb3a2fa320cf0dd2e376cdeba"
 metafile = true
 
 [[files]]
