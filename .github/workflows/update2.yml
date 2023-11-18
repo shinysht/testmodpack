@@ -30,10 +30,7 @@ jobs:
           git config --local user.email ${{ secrets.ACTION_EMAIL }}
           if ! git diff --exit-code $(git tag --sort version:refname | tail -n 1) -- mods; then
             git add .
-            git --no-pager diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods >> temp
-            echo "##############"
-            cat temp
-            cat temp | grep -w "name" | python updateChangelog.py
+            git --no-pager diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods | grep -w "name" | python updateChangelog.py
             git add .
             git commit -m "update mods"
             git push
