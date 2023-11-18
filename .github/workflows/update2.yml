@@ -28,6 +28,7 @@ jobs:
         run: |
           git config --local user.name ${{ secrets.ACTION_USERNAME }}
           git config --local user.email ${{ secrets.ACTION_EMAIL }}
+          git fetch --prune --unshallow --tags
           if ! git diff --exit-code $(git tag --sort version:refname | tail -n 1) -- mods; then
             git add .
             git --no-pager diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods | grep -w "name" | python updateChangelog.py
