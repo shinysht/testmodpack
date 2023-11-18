@@ -8,9 +8,13 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+          
       - name: Commit files and push it
         run: |
-          git --version >> temp
+          git --no-pager diff --unified=0 $(git tag --sort version:refname | tail -n 1) -- mods >> temp
           echo "####################"
           ls
           cat temp
