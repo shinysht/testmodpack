@@ -1,0 +1,13 @@
+name: testfield
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Commit files and push it
+        run: |
+          git --version
