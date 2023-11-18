@@ -10,4 +10,7 @@ jobs:
     steps:
       - name: Commit files and push it
         run: |
-          git --version
+          git --version >> temp
+          echo "####################"
+          ls
+          cat temp
