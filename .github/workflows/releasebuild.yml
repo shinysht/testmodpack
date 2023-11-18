@@ -13,4 +13,7 @@ jobs:
       - name: cat latest-changelog.md
         run: |
           CHANGELOG=$(cat CHANGELOG.md  | awk '/^# /{count++; if(count>1) exit;} count==1')
-          echo $CHANGELOG 
+          CHANGELOG="${CHANGELOG//'%'/'%25'}"
+          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
+          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
+          echo "${$CHANGELOG}"
